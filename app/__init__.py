@@ -1,17 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-from pprint import pprint
-
-import requests
 import sqlite3
 
-conn = sqlite3.connect('../12306.db')
-cursor = conn.cursor()
-
-r = requests.get('https://kyfw.12306.cn/otn/resources/js/query/train_list.js',verify=False)
-print(r.text)
-
-cursor.execute('CREATE TABLE `TRAIN` (`train_no` varchar(20) primary key ,`station_train_code` varchar(30),`train_type` varchar(5))')
+db = sqlite3.connect("../12306.sqlite")
 
 station_dict = {"北京北": "VAP",
                 "北京东": "BOP",
