@@ -204,3 +204,5 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
+.idea/dataSources/
+12306.sqlite
